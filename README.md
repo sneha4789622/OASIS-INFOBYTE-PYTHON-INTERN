@@ -276,21 +276,21 @@ To use this project, you need an API key from OpenWeatherMap.
 
 ### 💡 Example Usage
    ```
-Assistant: Tell the city name whose weather to search:  
-User: London  
-
-Assistant:  
-Weather in London, GB:  
-Temperature: 18°C  
-Feels like: 16°C  
-Minimum Temperature: 15°C  
-Maximum Temperature: 20°C  
-Weather Type: Clouds  
-Weather Condition: Scattered Clouds  
-Humidity: 72%  
-Wind Speed: 3.5 metres per second  
-   ```
-
+Tell the city name whose weather to search:
+Listening...
+You said: Chennai
+Weather in Chennai, IN:
+Temperature: 33.73°C
+Feels Like: 40.73°C
+Min Temperature: 32.83°C
+Max Temperature: 34.42°C
+Pressure: 1005 hPa
+Weather Type: Clouds
+Weather Description: scattered clouds
+Humidity: 63%
+Wind Speed: 6.69 meters per second
+Visibility: 6000 meters
+Cloudiness: 40%
 ---
 
 ### 🛡 Notes
