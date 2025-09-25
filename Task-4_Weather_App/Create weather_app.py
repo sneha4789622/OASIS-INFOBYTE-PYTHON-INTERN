@@ -1,4 +1,3 @@
-from turtle import listen
 import requests
 import json
 import pyttsx3
@@ -33,7 +32,7 @@ def get_weather(api_key):
     # URL to get the weather data
     
     
-    speak("Tell the city name whose weather to search:")
+    pns("Tell the city name whose weather to search:")
     city = listen()
 
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
