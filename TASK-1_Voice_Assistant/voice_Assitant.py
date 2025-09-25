@@ -12,12 +12,13 @@ engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 #print(voices[1].id)
 engine.setProperty('voice', voices[1].id)
-engine.setProperty("rate", 170)             # speed
-engine.setProperty("volume", 1.0)           # volume
+engine.setProperty("rate", 180)             # speed
+engine.setProperty("volume", 1)           # volume
 
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
+    engine.stop()
 
 def pns(text):
     print(text)
@@ -36,7 +37,7 @@ def wishMe():
     else:
         pns("Good Evening!")
 
-    pns("I am Jarvis. Please tell me how may I help you")
+    pns("Hello Mam,I am your Personal Voice Assitant! Please tell me how may I help you")
 
 def actual_date():
     now = datetime.now()
@@ -63,14 +64,28 @@ def takecommand():
         print("Say that again please...")
         return "None"    
     return query
+def Menu():
+    pns("""These are some functions which I can perform:
+            Respond to Hello,
+            Tell you the Time,
+            Tell you the Date,
+            Google Search for you,
+            Open Selected Websites for you,
+            To exit, say quit,
+            Thank you for your time""")
 
-if __name__=="__main__":
+def main():
     wishMe()
 
     while True:
         query = takecommand().lower()
 
         #Logic for executing tasks based on query
+        if "hello" in query:
+                pns("Hello Mam,I am your Personal Voice Assitant! Please tell me how may I help you")
+
+        elif "what can you do" in query:
+            Menu()
         if 'wikipedia' in query:
             pns('Searching Wikipedia...')
             query = query.replace("wikipedia","")
@@ -112,6 +127,11 @@ if __name__=="__main__":
             
         elif 'quit' in query:
                 exit()
+        else:
+            pns("Please try again.")
+        time.sleep(0.5)
+        pns("Any other queries, Mam?")
 
-
+if __name__ == "__main__":
+    main()
     
