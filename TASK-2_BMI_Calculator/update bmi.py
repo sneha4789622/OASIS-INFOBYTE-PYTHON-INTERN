@@ -1,5 +1,5 @@
-weight = float(input("Enter your weight (in kg): ").strip()
-height = float(input("Enter your height (in m): ").strip()
+weight = float(input("Enter your weight (in kg): ").strip())
+height = float(input("Enter your height (in m): ").strip())
 
 
 
