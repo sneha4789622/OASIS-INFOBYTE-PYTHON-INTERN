@@ -140,12 +140,11 @@ bmi =  weight / (height_in_meters ** 2)
 
 ### 📜 Example Output
 ```
-Enter your weight (in kg): 72
+Enter your weight (in kg): 65
 Enter your height (in m): 178
 
-Your Body Mass Index is: 22.72
-Your BMI Category is:
-You are Healthy (Normal Weight)!
+Your BMI Category is: 20.51
+You have a normal weight.
 ```
 ---
 ---
