@@ -10,12 +10,13 @@ import os
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-#print(voices[1].id)
-engine.setProperty('voice', voices[1].id)
+#print(voices[0].id)
+engine.setProperty('voice', voices[0].id)
 engine.setProperty("rate", 180)             # speed
 engine.setProperty("volume", 1)           # volume
 
 def speak(audio):
+    engine = pyttsx3.init()
     engine.say(audio)
     engine.runAndWait()
     engine.stop()
@@ -37,8 +38,8 @@ def wishMe():
     else:
         pns("Good Evening!")
 
-    pns("Hello Mam,I am your Personal Voice Assitant! Please tell me how may I help you")
-
+    pns("Hello Ma'am. I'm your Personal Voice Assistant. Please tell me how may I help you")
+r = sr.Recognizer()
 def actual_date():
     now = datetime.now()
     mname = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June',
@@ -64,6 +65,7 @@ def takecommand():
         print("Say that again please...")
         return "None"    
     return query
+
 def Menu():
     pns("""These are some functions which I can perform:
             Respond to Hello,
@@ -71,7 +73,7 @@ def Menu():
             Tell you the Date,
             Google Search for you,
             Open Selected Websites for you,
-            To exit, say quit,
+            To exit, say quit or thanks,
             Thank you for your time""")
 
 def main():
@@ -80,12 +82,10 @@ def main():
     while True:
         query = takecommand().lower()
 
-        #Logic for executing tasks based on query
+        
+    #Logic for executing tasks based on query
         if "hello" in query:
-                pns("Hello Mam,I am your Personal Voice Assitant! Please tell me how may I help you")
-
-        elif "what can you do" in query:
-            Menu()
+            pns("Hello Ma'am, I'm your Personal Voice Assistant!\nHow would you like me to help you?")
         if 'wikipedia' in query:
             pns('Searching Wikipedia...')
             query = query.replace("wikipedia","")
@@ -124,14 +124,16 @@ def main():
 
         elif 'open linkedin' in query:
             webbrowser.open("linkedin.com")
-            
-        elif 'quit' in query:
-                exit()
+
+        elif 'quit' in query or 'thanks' in query:
+            exit()
         else:
             pns("Please try again.")
-        time.sleep(0.5)
-        pns("Any other queries, Mam?")
+        time.sleep(0.1)
+        pns("Any other queries, ma'am?")
+
 
 if __name__ == "__main__":
-    main()
+    main()  
+
     
